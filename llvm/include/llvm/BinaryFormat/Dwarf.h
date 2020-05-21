@@ -232,6 +232,8 @@ inline bool isCPlusPlus(SourceLanguage S) {
   case DW_LANG_hi_user:
     return false;
   }
+  if (S >= DW_LANG_lo_user && S <= DW_LANG_hi_user)
+    return false;
   llvm_unreachable("Invalid source language");
 }
 
